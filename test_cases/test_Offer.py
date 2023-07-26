@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 import json
 import os
 import allure
@@ -15,7 +17,7 @@ def get_data():
 class TestOffer:
 
     @write_case_log
-    @allure.title("{data[title]}")  # 命名用例名称方式1
+    @allure.title("{data[title]}")  # 鍛藉悕鐢ㄤ緥鍚嶇О鏂瑰紡1
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.parametrize("data", get_data())
     def test_create_offer(self, data, get_headers):

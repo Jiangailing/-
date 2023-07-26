@@ -1,3 +1,4 @@
+# -*- coding: gbk -*-
 from functools import wraps
 
 from common.logger import Logger

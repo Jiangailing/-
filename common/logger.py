@@ -1,3 +1,4 @@
+# -*- coding: gbk -*-
 import logging
 import datetime
 import os

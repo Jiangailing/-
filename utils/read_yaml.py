@@ -1,3 +1,4 @@
+# -*- coding: gbk -*-
 import yaml
 
 
