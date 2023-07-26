@@ -1,32 +1,31 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
+# -*- coding: gbk -*-
 from common.logger import Logger
 
 
 class Assert:
-    #   å®ç°æ–­è¨€ï¼Œå¹¶ä¸”å°†æ–­è¨€çš„ç»“æœå†™å…¥åˆ°æ—¥å¿—ä¸­
+    #   ÊµÏÖ¶ÏÑÔ£¬²¢ÇÒ½«¶ÏÑÔµÄ½á¹ûĞ´Èëµ½ÈÕÖ¾ÖĞ
 
     @staticmethod
     def code_assert(response, assert_type,assert_msg):
         if assert_type == "code":
             try:
                 assert response.status_code == assert_msg
-                Logger.logger_in().info('æ–­è¨€æˆåŠŸï¼')
+                Logger.logger_in().info('¶ÏÑÔ³É¹¦£¡')
             except Exception as e:
-                Logger.logger_in().error('æ–­è¨€å¤±è´¥ï¼åŸå› æ˜¯ï¼š{}'.format(repr(e)))
+                Logger.logger_in().error('¶ÏÑÔÊ§°Ü£¡Ô­ÒòÊÇ£º{}'.format(repr(e)))
             # print(response.text)
         else:
-            print("è¯·è¾“å…¥code")
+            print("ÇëÊäÈëcode")
 
         if assert_type == "massage":
             try:
                 assert response.text == assert_msg
-                Logger.logger_in().info('æ–­è¨€æˆåŠŸï¼')
+                Logger.logger_in().info('¶ÏÑÔ³É¹¦£¡')
             except Exception as e:
-                Logger.logger_in().error('æ–­è¨€å¤±è´¥ï¼åŸå› æ˜¯ï¼š{}'.format(repr(e)))
+                Logger.logger_in().error('¶ÏÑÔÊ§°Ü£¡Ô­ÒòÊÇ£º{}'.format(repr(e)))
                 # print(response.text)
             else:
-                print("è¯·è¾“å…¥massage")
+                print("ÇëÊäÈëmassage")
 
 
 
