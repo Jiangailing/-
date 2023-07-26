@@ -1,6 +1,0 @@
-method: post
-url: /token
-json:
-   app_key : 391C183A58C3444BB2083D77D7DDE145
-   app_secret: 03FF7BB3EA3E469BB35BFC0389D79E177E0BDE5D55A7496B85463FA68267654C
-   grant_type : client_credentials
