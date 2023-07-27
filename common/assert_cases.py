@@ -4,7 +4,6 @@ from common.logger import Logger
 
 class Assert:
     #   实现断言，并且将断言的结果写入到日志中
-
     @staticmethod
     def code_assert(response, assert_type,assert_msg):
         if assert_type == "code":
