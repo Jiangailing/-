@@ -20,9 +20,9 @@ class Offer:
         # print(json.dumps(header))
         response = RequestUtils().send_request(method="post", url=data["url"], data=json.dumps(data["body"]),
                                                headers=get_headers)
-        print(response.request.body)
+        # print(response.request.body)
         data = json.loads(response.text)
-        print(data['data'][0]["dataSourceResults"][0]["value"])
+        # print(data['data'][0]["dataSourceResults"][0]["value"])
         return data['data'][0]["dataSourceResults"][0]["value"]
 
     # 创建offer

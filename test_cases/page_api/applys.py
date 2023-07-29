@@ -11,18 +11,18 @@ class Apply:
     @staticmethod
     def get_apply_id(path, applicant_id, get_headers):
         data = read_yaml(path)
-        print(data)
+        # print(data)
         applicant_id = str(applicant_id)
         data["body"] = {
             'applicantIds': [applicant_id]
         }
         body = data["body"]
-        print(type(body))
-        print(data)
+        # print(type(body))
+        # print(data)
         response = RequestUtils().send_request(method="post", url=data["url"],
                                                data=json.dumps(body, default=str, ensure_ascii=False),
                                                headers=get_headers)
-        print(response.request.body)
+        # print(response.request.body)
         data = json.loads(response.text)
-        print(data['data'][0]['applyId'])
+        # print(data['data'][0]['applyId'])
         return data['data'][0]['applyId']

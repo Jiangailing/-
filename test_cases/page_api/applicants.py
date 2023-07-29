@@ -11,9 +11,9 @@ class Applicant:
     @staticmethod
     def get_applicant_id(path, get_headers):
         data = read_yaml(path)
-        print(json.dumps(data))
+        # print(json.dumps(data))
         response = RequestUtils().send_request(method="post", url=data["url"], data=json.dumps(data["body"]),
                                                headers=get_headers)
-        print(response.text)
+        # print(response.text)
         data = json.loads(response.text)
         return data['data'][0]
