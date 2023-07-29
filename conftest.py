@@ -27,6 +27,7 @@ def get_headers():
     except Exception as e:
         # print(repr(e))
         Logger.logger_in().error('获取token失败，原因为{}'.format(repr(e)))
+        return e
 
 
 if __name__ == '__main__':

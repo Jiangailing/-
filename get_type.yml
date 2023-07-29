@@ -1,0 +1,6 @@
+url: /dataservice/api/DataSource/GetDataSource
+body:
+  app: RecruitOnBoarding
+  metaObjectName: RecruitOnBoarding.Offer
+  listFilter:
+    - dsName: RecruitOnBoarding.OfferType
