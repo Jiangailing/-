@@ -77,7 +77,7 @@ class TestOffer:
     #     print(response.text)
     #     Assert.code_assert(response, "code", data["code"])
 
-    # 测试生成offer，传入应聘者id、申请id以及offer类型id
+    # 按对象封装接口请求后的用例，测试生成offer，传入应聘者id、申请id以及offer类型id
     @write_case_log
     @allure.title("{data[title]}")  # 命名用例名称方式1
     @allure.severity(allure.severity_level.CRITICAL)
