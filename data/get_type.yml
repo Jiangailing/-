@@ -1,4 +1,5 @@
 url: /dataservice/api/DataSource/GetDataSource
+method: post
 body:
   app: RecruitOnBoarding
   metaObjectName: RecruitOnBoarding.Offer

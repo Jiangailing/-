@@ -12,7 +12,8 @@ class Applicant:
     def get_applicant_id(path, get_headers):
         data = read_yaml(path)
         # print(json.dumps(data))
-        response = RequestUtils().send_request(method="post", url=data["url"], data=json.dumps(data["body"]),
+        print(data)
+        response = RequestUtils().send_request(method=data["method"], url=data["url"], data=json.dumps(data["body"]),
                                                headers=get_headers)
         # print(response.text)
         data = json.loads(response.text)

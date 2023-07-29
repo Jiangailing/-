@@ -1,3 +1,4 @@
 url: /RecruitV6/api/v1/Applicant/GetApplicantIds
+method: post
 body:
   mobile: '13617912772'

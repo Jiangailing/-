@@ -22,11 +22,12 @@ def get_headers():
             "Host": "openapi.italent.cn",
             "Content-Type": "application/json"
         }
-
+        # print(headers)
         return headers
     except Exception as e:
         # print(repr(e))
         Logger.logger_in().error('获取token失败，原因为{}'.format(repr(e)))
+        # print(e)
         return e
 
 

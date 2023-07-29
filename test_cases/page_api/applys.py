@@ -19,7 +19,7 @@ class Apply:
         body = data["body"]
         # print(type(body))
         # print(data)
-        response = RequestUtils().send_request(method="post", url=data["url"],
+        response = RequestUtils().send_request(method=data["method"], url=data["url"],
                                                data=json.dumps(body, default=str, ensure_ascii=False),
                                                headers=get_headers)
         # print(response.request.body)

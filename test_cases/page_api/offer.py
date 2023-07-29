@@ -18,7 +18,7 @@ class Offer:
     def get_offer_type(path, get_headers):
         data = read_yaml(path)
         # print(json.dumps(header))
-        response = RequestUtils().send_request(method="post", url=data["url"], data=json.dumps(data["body"]),
+        response = RequestUtils().send_request(method=data["method"], url=data["url"], data=json.dumps(data["body"]),
                                                headers=get_headers)
         # print(response.request.body)
         data = json.loads(response.text)
@@ -38,4 +38,14 @@ class Offer:
         body["applyId"] = get_apply_id
         response = RequestUtils().send_request(url=data["url"], method=data["method"],
                                                json=body, headers=headers)
+        response = json.loads(response.text)
+        return response["data"]
+
+    # 根据offerid查询offer
+    @staticmethod
+    def get_offer(path, header, offer_id):
+        data = read_yaml(path)
+        offer_id = str(offer_id)
+        body = [offer_id]
+        response = RequestUtils().send_request(url=data['url'], method=data["method"], json=body, headers=header)
         return response
