@@ -13,7 +13,7 @@ class GetData:
     def get_data(filename):
         data_names = re.findall(r'_(.*)\.', filename)
         data_name = str(data_names[0]) + '.xlsx'
-        path = os.path.join('./data/', data_name)
+        path = os.path.join('./data/test_data/', data_name)
         excel_cases = ExcelHandler(path)
         data_cases = excel_cases.read_excel("Sheet1")
         print(data_cases)

@@ -17,6 +17,7 @@ class RequestUtils:
             url_1 = self.get_url + url
             # print(self.get_url)
             # print(url_1)
+            Logger.logger_in().info('-----------------{}接口开始执行-----------------'.format(url))
             response = RequestUtils.session.request(url=url_1, method=method, **kwargs)
             Logger.logger_in().info('接口请求成功，响应值为：{}'.format(response.text))
             return response
