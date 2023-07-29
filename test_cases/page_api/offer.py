@@ -39,7 +39,7 @@ class Offer:
         response = RequestUtils().send_request(url=data["url"], method=data["method"],
                                                json=body, headers=headers)
         response = json.loads(response.text)
-        return response["data"]
+        return response
 
     # 根据offerid查询offer
     @staticmethod

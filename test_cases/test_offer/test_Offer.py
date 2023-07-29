@@ -88,7 +88,7 @@ class TestOffer:
                                   applicant_id,
                                   Apply.get_apply_id('./data/get_applyid.yml', applicant_id, get_headers))
         # print(response.text)
-        response = Offer.get_offer('./data/get_offer.yml', get_headers, data)
+        response = Offer.get_offer('./data/get_offer.yml', get_headers, data["data"])
         # print(response)
         # 若能根据新建的offer的offerid查询到对应的offer，那么说明新建offer成功
         Assert.code_assert(response, "code", response.status_code)
