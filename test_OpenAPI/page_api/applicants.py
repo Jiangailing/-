@@ -6,7 +6,7 @@ from utils.requests_utils import RequestUtils
 
 class Applicant:
 
-    # 获取applicantid（应聘者id）
+    # 获取applicant_id（应聘者id）
     @staticmethod
     def get_applicant_id(path, get_headers):
         data = read_yaml(path)
