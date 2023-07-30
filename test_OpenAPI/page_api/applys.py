@@ -23,6 +23,7 @@ class Apply:
                                                data=json.dumps(body, default=str, ensure_ascii=False),
                                                headers=get_headers)
         # print(response.request.body)
-        data = json.loads(response.text)
+        response = json.loads(response.text)
         # print(data['data'][0]['applyId'])
-        return data['data'][0]['applyId']
+        # return data['data'][0]['applyId']
+        return response

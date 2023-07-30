@@ -88,8 +88,7 @@ class TestOffer:
         create_offer_response = Offer.create_offer(data, get_headers,
                                                    Offer.get_offer_type('./data/get_type.yml', get_headers)['data'][0]["dataSourceResults"][0]["value"],
                                                    applicant_id,
-                                                   Apply.get_apply_id('./data/get_applyid.yml', applicant_id,
-                                                                      get_headers))
+                                                   Apply.get_apply_id('./data/get_applyid.yml', applicant_id, get_headers)['data'][0]['applyId'])
         # print(response.text)
         response = Offer.get_offer('./data/get_offer.yml', get_headers, create_offer_response["data"])
         # print(response)
