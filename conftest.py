@@ -6,7 +6,7 @@ from utils.read_yaml import read_yaml
 from utils.requests_utils import RequestUtils
 
 
-@pytest.fixture(scope="class")
+@pytest.fixture(scope="session")
 def get_headers():
     try:
         # 读取获取token需要用到的数据

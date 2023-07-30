@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
+import json
 import os
 import allure
 import pytest
@@ -84,14 +85,17 @@ class TestOffer:
     @pytest.mark.parametrize("data", get_data())
     def test_create_offer(self, data, get_headers):
         applicant_id = Applicant.get_applicant_id('./data/get_applicant.yml', get_headers)
-        create_offer_response = Offer.create_offer(data, get_headers, Offer.get_offer_type('./data/get_type.yml', get_headers),
-                                  applicant_id,
-                                  Apply.get_apply_id('./data/get_applyid.yml', applicant_id, get_headers))
+        create_offer_response = Offer.create_offer(data, get_headers,
+                                                   Offer.get_offer_type('./data/get_type.yml', get_headers)['data'][0]["dataSourceResults"][0]["value"],
+                                                   applicant_id,
+                                                   Apply.get_apply_id('./data/get_applyid.yml', applicant_id,
+                                                                      get_headers))
         # print(response.text)
         response = Offer.get_offer('./data/get_offer.yml', get_headers, create_offer_response["data"])
         # print(response)
-        # 若能根据新建的offer的offerid查询到对应的offer，那么说明新建offer成功
-        Assert.code_assert(response, "code", response.status_code)
+        response = json.loads(response.text)
+        # 若能根据新建的offer的offerid能查询到对应的offer，那么说明新建offer成功
+        Assert.custom_assert(create_offer_response["data"], response["data"][0]["id"])
 # if __name__ == '__main__':
 #     t = Testopenapi
 #     t.test_create_offer()
