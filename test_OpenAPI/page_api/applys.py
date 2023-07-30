@@ -1,4 +1,4 @@
-# -*- coding: gbk -*-
+# -*- coding: utf-8 -*-
 import json
 from utils.read_yaml import read_yaml
 from utils.requests_utils import RequestUtils
@@ -6,7 +6,7 @@ from utils.requests_utils import RequestUtils
 
 class Apply:
 
-    # »ñÈ¡apply_id£¨Ó¦Æ¸ÕßÉêÇëid£©
+    # è·å–apply_idï¼ˆåº”è˜è€…ç”³è¯·idï¼‰
     @staticmethod
     def get_apply_id(path, applicant_id, get_headers):
         data = read_yaml(path)
