@@ -5,11 +5,7 @@ from common.logger import Logger
 
 
 def write_case_log(func):
-    """
-    记录用例运行日志
-    :param func:
-    :return:
-    """
+    # 记录用例运行日志
 
     @wraps(func)
     def wrapper(*args, **kwargs):
