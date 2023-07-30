@@ -6,9 +6,9 @@ import pytest
 from common.get_data import GetData
 from common.wrappers import write_case_log
 from common.assert_cases import Assert
-from test_cases.page_api.applicants import Applicant
-from test_cases.page_api.applys import Apply
-from test_cases.page_api.offer import Offer
+from test_OpenAPI.page_api.applicants import Applicant
+from test_OpenAPI.page_api.applys import Apply
+from test_OpenAPI.page_api.offer import Offer
 from utils.requests_utils import RequestUtils
 
 
