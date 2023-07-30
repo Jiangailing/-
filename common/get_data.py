@@ -11,7 +11,7 @@ class GetData:
 
     @staticmethod
     def get_data(filename):
-        data_names = re.findall(r'_(.*)\.', filename)
+        data_names = re.findall(r'_(.*?)\.', filename)
         data_name = str(data_names[0]) + '.xlsx'
         path = os.path.join('./data/test_data/', data_name)
         excel_cases = ExcelHandler(path)
