@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
+# -*- coding: gbk -*-
 import json
 from utils.read_yaml import read_yaml
 from utils.requests_utils import RequestUtils
@@ -7,7 +6,7 @@ from utils.requests_utils import RequestUtils
 
 class Offer:
 
-    # 鑾峰彇offer绫诲瀷id
+    # 获取offer类型id
     @staticmethod
     def get_offer_type(path, get_headers):
         data = read_yaml(path)
@@ -19,14 +18,14 @@ class Offer:
         # print(data['data'][0]["dataSourceResults"][0]["value"])
         # return data['data'][0]["dataSourceResults"][0]["value"]
         return response
-    # 鍒涘缓offer
+    # 创建offer
     @staticmethod
     def create_offer(data, headers, get_offer_type, get_applicant_id, get_apply_id):
         # print(data)
         # print(data["json"])
         # body = json.dumps(data["json"])
         # json.loads(body)
-        # 灏唈son鐨勫�间粠瀛楃涓茶浆鎹㈡垚瀛楀吀绫诲瀷
+        # 将json的值从字符串转换成字典类型
         body = eval(data["json"])
         body["offerTypeID"] = get_offer_type
         body["applicantId"] = get_applicant_id
@@ -36,7 +35,7 @@ class Offer:
         response = json.loads(response.text)
         return response
 
-    # 鏍规嵁offerid鏌ヨoffer
+    # 根据offerid查询offer
     @staticmethod
     def get_offer(path, header, offer_id):
         data = read_yaml(path)

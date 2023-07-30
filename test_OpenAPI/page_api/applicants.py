@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
+# -*- coding: gbk -*-
 import json
 from utils.read_yaml import read_yaml
 from utils.requests_utils import RequestUtils
@@ -7,7 +6,7 @@ from utils.requests_utils import RequestUtils
 
 class Applicant:
 
-    # 鑾峰彇搴旇仒鑰卛d
+    # 获取应聘者id
     @staticmethod
     def get_applicant_id(path, get_headers):
         data = read_yaml(path)

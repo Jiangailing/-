@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
+# -*- coding: gbk -*-
 import json
 import os
 import allure
@@ -18,7 +17,7 @@ def get_data():
 
 
 class TestOffer:
-    """æœªåˆ†å¯¹è±¡åšå°è£…å‰çš„å®ç°"""
+    """Î´·Ö¶ÔÏó×ö·â×°Ç°µÄÊµÏÖ"""
 
     # @pytest.fixture()
     # def get_offertype(self,get_headers):
@@ -61,7 +60,7 @@ class TestOffer:
     #     return data['data'][0]['applyId']
     #
     # @write_case_log
-    # @allure.title("{data[title]}")  # å‘½åç”¨ä¾‹åç§°æ–¹å¼1
+    # @allure.title("{data[title]}")  # ÃüÃûÓÃÀıÃû³Æ·½Ê½1
     # @allure.severity(allure.severity_level.CRITICAL)
     # @pytest.mark.parametrize("data", get_data())
     # def test_create_offer(self, data, get_headers, get_offertype, get_applicant, get_applyid):
@@ -78,9 +77,9 @@ class TestOffer:
     #     print(response.text)
     #     Assert.code_assert(response, "code", data["code"])
 
-    # æŒ‰å¯¹è±¡å°è£…æ¥å£è¯·æ±‚åçš„ç”¨ä¾‹ï¼Œæµ‹è¯•ç”Ÿæˆofferï¼Œä¼ å…¥åº”è˜è€…idã€ç”³è¯·idä»¥åŠofferç±»å‹id
+    # °´¶ÔÏó·â×°½Ó¿ÚÇëÇóºóµÄÓÃÀı£¬²âÊÔÉú³Éoffer£¬´«ÈëÓ¦Æ¸Õßid¡¢ÉêÇëidÒÔ¼°offerÀàĞÍid
     @write_case_log
-    @allure.title("{data[title]}")  # å‘½åç”¨ä¾‹åç§°æ–¹å¼1
+    @allure.title("{data[title]}")  # ÃüÃûÓÃÀıÃû³Æ·½Ê½1
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.parametrize("data", get_data())
     def test_create_offer(self, data, get_headers):
@@ -93,7 +92,7 @@ class TestOffer:
         response = Offer.get_offer('./data/get_offer.yml', get_headers, create_offer_response["data"])
         # print(response)
         response = json.loads(response.text)
-        # è‹¥èƒ½æ ¹æ®æ–°å»ºçš„offerçš„offeridèƒ½æŸ¥è¯¢åˆ°å¯¹åº”çš„offerï¼Œé‚£ä¹ˆè¯´æ˜æ–°å»ºofferæˆåŠŸ
+        # ÈôÄÜ¸ù¾İĞÂ½¨µÄofferµÄofferidÄÜ²éÑ¯µ½¶ÔÓ¦µÄoffer£¬ÄÇÃ´ËµÃ÷ĞÂ½¨offer³É¹¦
         Assert.custom_assert(create_offer_response["data"], response["data"][0]["id"])
 # if __name__ == '__main__':
 #     t = Testopenapi
