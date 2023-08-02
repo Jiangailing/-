@@ -25,6 +25,7 @@ class RequestUtils:
             Logger.logger_in().error('接口请求失败，原因为：{}'.format(repr(e)))
             return e
 
-if __name__ == '__main__':
-    url=RequestUtils()
-    url.send_request("123")
+
+# if __name__ == '__main__':
+#     url = RequestUtils()
+#     url.send_request("123")
